@@ -51,7 +51,6 @@ public class CubicRubic {
 
         for (zeroCounter = 0; zeroCounter <= 8; zeroCounter++) {
             inputData[1][zeroCounter] = Integer.parseInt(in.nextLine());
-            zeroCounter++;
         }
 
         // Collecting Data from the Blue side
@@ -154,7 +153,7 @@ public class CubicRubic {
         return colors;
     }
 
-    public static int[][] greenCounterClockWise(int[][] colors) { // greenClockWise <-
+    public static int[][] greenCounterClockWise(int[][] colors) { // greenCounterClockWise <-
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[0][0];
         primaryFace[1] = colors[0][1];
@@ -256,15 +255,488 @@ public class CubicRubic {
         colors[0][8] = primaryOuter[52];
         colors[0][5] = primaryOuter[51];
         colors[0][2] = primaryOuter[50];
-        colors[4][6] = primaryOuter[8];
-        colors[4][6] = primaryOuter[8];
-        colors[4][6] = primaryOuter[8];
+        colors[4][6] = primaryOuter[20];
+        colors[4][7] = primaryOuter[23];
+        colors[4][8] = primaryOuter[26];
         System.out.println("WhiteClockWise");
         return colors;
+    }
 
+    public static int[][] whiteCounterClockWise(int[][] colors) {
+        int[] primaryFace = new int[62];
+        primaryFace[0] = colors[1][0];
+        primaryFace[1] = colors[1][1];
+        primaryFace[2] = colors[1][2];
+        primaryFace[3] = colors[1][3];
+        primaryFace[4] = colors[1][4];
+        primaryFace[5] = colors[1][5];
+        primaryFace[6] = colors[1][6];
+        primaryFace[7] = colors[1][7];
+        primaryFace[8] = colors[1][8];
+
+
+        colors[1][6] = primaryFace[0];
+        colors[1][3] = primaryFace[1];
+        colors[1][0] = primaryFace[2];
+        colors[1][7] = primaryFace[3];
+        colors[1][4] = primaryFace[4];
+        colors[1][1] = primaryFace[5];
+        colors[1][8] = primaryFace[6];
+        colors[1][5] = primaryFace[7];
+        colors[1][2] = primaryFace[8];
+
+        int[] primaryOuter = new int[62];
+        primaryOuter[46] = colors[4][6];
+        primaryOuter[47] = colors[4][7];
+        primaryOuter[48] = colors[4][8];
+        primaryOuter[20] = colors[2][0];
+        primaryOuter[23] = colors[2][3];
+        primaryOuter[26] = colors[2][6];
+        primaryOuter[52] = colors[5][2];
+        primaryOuter[51] = colors[5][1];
+        primaryOuter[50] = colors[5][0];
+        primaryOuter[8] = colors[0][8];
+        primaryOuter[5] = colors[0][5];
+        primaryOuter[2] = colors[0][2];
+
+        colors[0][8] = primaryOuter[46];
+        colors[0][5] = primaryOuter[47];
+        colors[0][2] = primaryOuter[48];
+        colors[4][6] = primaryOuter[20];
+        colors[4][7] = primaryOuter[23];
+        colors[4][8] = primaryOuter[26];
+        colors[2][0] = primaryOuter[52];
+        colors[2][3] = primaryOuter[51];
+        colors[2][6] = primaryOuter[50];
+        colors[5][2] = primaryOuter[8];
+        colors[5][1] = primaryOuter[5];
+        colors[5][0] = primaryOuter[2];
+        System.out.println("whiteCounterClockWise");
+        return colors;
+    }
+
+    public static int[][] BlueClockWise(int[][] colors) {
+        int[] primaryFace = new int[62];
+        primaryFace[0] = colors[2][0];
+        primaryFace[1] = colors[2][1];
+        primaryFace[2] = colors[2][2];
+        primaryFace[3] = colors[2][3];
+        primaryFace[4] = colors[2][4];
+        primaryFace[5] = colors[2][5];
+        primaryFace[6] = colors[2][6];
+        primaryFace[7] = colors[2][7];
+        primaryFace[8] = colors[2][8];
+
+        colors[2][2] = primaryFace[0];
+        colors[2][3] = primaryFace[1];
+        colors[2][8] = primaryFace[2];
+        colors[2][1] = primaryFace[3];
+        colors[2][4] = primaryFace[4];
+        colors[2][7] = primaryFace[5];
+        colors[2][0] = primaryFace[6];
+        colors[2][3] = primaryFace[7];
+        colors[2][6] = primaryFace[8];
+
+        int[] primaryOuter = new int[62];
+        primaryOuter[42] = colors[4][2];
+        primaryOuter[45] = colors[4][5];
+        primaryOuter[48] = colors[4][8];
+        primaryOuter[12] = colors[1][2];
+        primaryOuter[15] = colors[1][5];
+        primaryOuter[18] = colors[1][8];
+        primaryOuter[52] = colors[5][2];
+        primaryOuter[55] = colors[5][5];
+        primaryOuter[58] = colors[5][8];
+        primaryOuter[30] = colors[3][0];
+        primaryOuter[33] = colors[3][3];
+        primaryOuter[36] = colors[3][6];
+
+        colors[3][0] = primaryOuter[48];
+        colors[3][3] = primaryOuter[45];
+        colors[3][6] = primaryOuter[42];
+        colors[5][8] = primaryOuter[30];
+        colors[5][5] = primaryOuter[33];
+        colors[5][2] = primaryOuter[36];
+        colors[1][8] = primaryOuter[58];
+        colors[1][5] = primaryOuter[55];
+        colors[1][2] = primaryOuter[52];
+        colors[4][2] = primaryOuter[12];
+        colors[4][5] = primaryOuter[15];
+        colors[4][8] = primaryOuter[18];
+        System.out.println("BlueClockWise");
+        return colors;
+    }
+
+    public static int[][] BlueCounterClockWise(int[][] colors) {
+        int[] primaryFace = new int[62];
+        primaryFace[0] = colors[2][0];
+        primaryFace[1] = colors[2][1];
+        primaryFace[2] = colors[2][2];
+        primaryFace[3] = colors[2][3];
+        primaryFace[4] = colors[2][4];
+        primaryFace[5] = colors[2][5];
+        primaryFace[6] = colors[2][6];
+        primaryFace[7] = colors[2][7];
+        primaryFace[8] = colors[2][8];
+
+        colors[2][6] = primaryFace[0];
+        colors[2][3] = primaryFace[1];
+        colors[2][0] = primaryFace[2];
+        colors[2][7] = primaryFace[3];
+        colors[2][4] = primaryFace[4];
+        colors[2][1] = primaryFace[5];
+        colors[2][8] = primaryFace[6];
+        colors[2][5] = primaryFace[7];
+        colors[2][2] = primaryFace[8];
+
+        int[] primaryOuter = new int[62];
+        primaryOuter[48] = colors[4][8];
+        primaryOuter[45] = colors[4][5];
+        primaryOuter[42] = colors[4][2];
+        primaryOuter[30] = colors[3][0];
+        primaryOuter[33] = colors[3][3];
+        primaryOuter[36] = colors[3][6];
+        primaryOuter[58] = colors[5][8];
+        primaryOuter[55] = colors[5][5];
+        primaryOuter[52] = colors[5][2];
+        primaryOuter[18] = colors[1][8];
+        primaryOuter[15] = colors[1][5];
+        primaryOuter[12] = colors[1][2];
+
+        colors[3][0] = primaryOuter[48];
+        colors[3][3] = primaryOuter[45];
+        colors[3][6] = primaryOuter[42];
+        colors[5][8] = primaryOuter[30];
+        colors[5][5] = primaryOuter[33];
+        colors[5][2] = primaryOuter[36];
+        colors[1][8] = primaryOuter[58];
+        colors[1][5] = primaryOuter[55];
+        colors[1][2] = primaryOuter[52];
+        colors[4][2] = primaryOuter[12];
+        colors[4][5] = primaryOuter[15];
+        colors[4][8] = primaryOuter[18];
+        System.out.println("Blue counter Clock Wise");
+        return colors;
+    }
+
+    public static int[][] yellowClockWise(int[][] colors) {
+
+        int[] primaryFace = new int[62];
+        primaryFace[0] = colors[3][0];
+        primaryFace[1] = colors[3][1];
+        primaryFace[2] = colors[3][2];
+        primaryFace[3] = colors[3][3];
+        primaryFace[4] = colors[3][4];
+        primaryFace[5] = colors[3][5];
+        primaryFace[6] = colors[3][6];
+        primaryFace[7] = colors[3][7];
+        primaryFace[8] = colors[3][8];
+
+        colors[3][2] = primaryFace[0];
+        colors[3][1] = primaryFace[3];
+        colors[3][0] = primaryFace[6];
+        colors[3][3] = primaryFace[7];
+        colors[3][6] = primaryFace[8];
+        colors[3][7] = primaryFace[5];
+        colors[3][8] = primaryFace[2];
+        colors[2][5] = primaryFace[7];
+        colors[2][2] = primaryFace[8];
+
+        int[] primaryOuter = new int[62];
+        primaryOuter[40] = colors[4][0];
+        primaryOuter[41] = colors[4][1];
+        primaryOuter[42] = colors[4][2];
+        primaryOuter[0] = colors[0][3];
+        primaryOuter[3] = colors[0][3];
+        primaryOuter[6] = colors[0][6];
+        primaryOuter[56] = colors[5][8];
+        primaryOuter[57] = colors[5][7];
+        primaryOuter[58] = colors[5][8];
+        primaryOuter[28] = colors[2][8];
+        primaryOuter[25] = colors[2][5];
+        primaryOuter[22] = colors[2][2];
+
+        colors[0][0] = primaryOuter[42];
+        colors[0][3] = primaryOuter[41];
+        colors[0][6] = primaryOuter[42];
+        colors[5][6] = primaryOuter[0];
+        colors[5][7] = primaryOuter[3];
+        colors[5][2] = primaryOuter[36];
+        colors[5][8] = primaryOuter[6];
+        colors[2][5] = primaryOuter[57];
+        colors[2][2] = primaryOuter[58];
+        colors[4][2] = primaryOuter[28];
+        colors[4][1] = primaryOuter[25];
+        colors[4][0] = primaryOuter[22];
+
+        System.out.println("Yellow  Clock Wise");
+        return colors;
+    }
+
+    public static int[][] yellowCounterClockWise(int[][] colors) {
+
+        int[] primaryFace = new int[62];
+        primaryFace[0] = colors[3][0];
+        primaryFace[1] = colors[3][1];
+        primaryFace[2] = colors[3][2];
+        primaryFace[3] = colors[3][3];
+        primaryFace[4] = colors[3][4];
+        primaryFace[5] = colors[3][5];
+        primaryFace[6] = colors[3][6];
+        primaryFace[7] = colors[3][7];
+        primaryFace[8] = colors[3][8];
+
+        colors[3][6] = primaryFace[0];
+        colors[3][3] = primaryFace[1];
+        colors[3][0] = primaryFace[2];
+        colors[3][7] = primaryFace[3];
+        colors[3][4] = primaryFace[4];
+        colors[3][1] = primaryFace[5];
+        colors[3][8] = primaryFace[6];
+        colors[3][5] = primaryFace[7];
+        colors[3][2] = primaryFace[8];
+
+        int[] primaryOuter = new int[62];
+        primaryOuter[42] = colors[4][2];
+        primaryOuter[41] = colors[4][1];
+        primaryOuter[40] = colors[4][0];
+        primaryOuter[0] = colors[0][0];
+        primaryOuter[3] = colors[0][3];
+        primaryOuter[6] = colors[0][6];
+        primaryOuter[56] = colors[5][6];
+        primaryOuter[57] = colors[5][7];
+        primaryOuter[58] = colors[5][8];
+        primaryOuter[28] = colors[2][8];
+        primaryOuter[25] = colors[2][5];
+        primaryOuter[22] = colors[2][2];
+
+        colors[2][8] = primaryOuter[42];
+        colors[2][5] = primaryOuter[41];
+        colors[2][2] = primaryOuter[42];
+        colors[4][2] = primaryOuter[0];
+        colors[4][1] = primaryOuter[3];
+        colors[4][0] = primaryOuter[6];
+        colors[0][0] = primaryOuter[56];
+        colors[0][3] = primaryOuter[57];
+        colors[0][6] = primaryOuter[58];
+        colors[5][6] = primaryOuter[28];
+        colors[5][7] = primaryOuter[25];
+        colors[5][8] = primaryOuter[22];
+        System.out.println("Yellow Counter Clock Wise");
+        return colors;
+    }
+
+    public static int[][] orangeClockWise(int[][] colors) {
+        int[] primaryFace = new int[62];
+        primaryFace[0] = colors[4][0];
+        primaryFace[1] = colors[4][1];
+        primaryFace[2] = colors[4][2];
+        primaryFace[3] = colors[4][3];
+        primaryFace[4] = colors[4][4];
+        primaryFace[5] = colors[4][5];
+        primaryFace[6] = colors[4][6];
+        primaryFace[7] = colors[4][7];
+        primaryFace[8] = colors[4][8];
+
+        colors[4][2] = primaryFace[0];
+        colors[4][5] = primaryFace[1];
+        colors[4][8] = primaryFace[2];
+        colors[4][1] = primaryFace[3];
+        colors[4][4] = primaryFace[4];
+        colors[4][7] = primaryFace[5];
+        colors[4][0] = primaryFace[6];
+        colors[4][3] = primaryFace[7];
+        colors[4][6] = primaryFace[8];
+
+        int[] primaryOuter = new int[62];
+        primaryOuter[32] = colors[3][2];
+        primaryOuter[31] = colors[3][1];
+        primaryOuter[30] = colors[3][0];
+        primaryOuter[22] = colors[2][2];
+        primaryOuter[21] = colors[2][1];
+        primaryOuter[20] = colors[2][0];
+        primaryOuter[12] = colors[1][2];
+        primaryOuter[11] = colors[1][1];
+        primaryOuter[10] = colors[1][0];
+        primaryOuter[2] = colors[0][2];
+        primaryOuter[1] = colors[0][1];
+        primaryOuter[0] = colors[0][0];
+
+        colors[2][2] = primaryOuter[32];
+        colors[2][1] = primaryOuter[31];
+        colors[2][0] = primaryOuter[30];
+        colors[1][2] = primaryOuter[22];
+        colors[1][1] = primaryOuter[21];
+        colors[1][0] = primaryOuter[20];
+        colors[0][2] = primaryOuter[12];
+        colors[0][1] = primaryOuter[11];
+        colors[0][0] = primaryOuter[10];
+        colors[3][2] = primaryOuter[2];
+        colors[3][1] = primaryOuter[1];
+        colors[3][0] = primaryOuter[0];
+        System.out.println("Orange Clock Wise");
+        return colors;
 
     }
 
+    public static int[][] orangeCounterClockWise(int[][] colors) {
+        int[] primaryFace = new int[62];
+        primaryFace[0] = colors[4][0];
+        primaryFace[1] = colors[4][1];
+        primaryFace[2] = colors[4][2];
+        primaryFace[3] = colors[4][3];
+        primaryFace[4] = colors[4][4];
+        primaryFace[5] = colors[4][5];
+        primaryFace[6] = colors[4][6];
+        primaryFace[7] = colors[4][7];
+        primaryFace[8] = colors[4][8];
 
+        colors[4][6] = primaryFace[0];
+        colors[4][3] = primaryFace[1];
+        colors[4][0] = primaryFace[2];
+        colors[4][7] = primaryFace[3];
+        colors[4][4] = primaryFace[4];
+        colors[4][1] = primaryFace[5];
+        colors[4][8] = primaryFace[6];
+        colors[4][5] = primaryFace[7];
+        colors[4][2] = primaryFace[8];
+
+        int[] primaryOuter = new int[62];
+        primaryOuter[32] = colors[3][2];
+        primaryOuter[31] = colors[3][1];
+        primaryOuter[30] = colors[3][0];
+        primaryOuter[22] = colors[2][2];
+        primaryOuter[21] = colors[2][1];
+        primaryOuter[20] = colors[2][0];
+        primaryOuter[12] = colors[1][2];
+        primaryOuter[11] = colors[1][1];
+        primaryOuter[10] = colors[1][0];
+        primaryOuter[2] = colors[0][2];
+        primaryOuter[1] = colors[0][1];
+        primaryOuter[0] = colors[0][0];
+
+        colors[0][2] = primaryOuter[32];
+        colors[0][1] = primaryOuter[31];
+        colors[0][0] = primaryOuter[30];
+        colors[3][2] = primaryOuter[22];
+        colors[3][1] = primaryOuter[21];
+        colors[3][0] = primaryOuter[20];
+        colors[2][2] = primaryOuter[12];
+        colors[2][1] = primaryOuter[11];
+        colors[2][0] = primaryOuter[10];
+        colors[1][2] = primaryOuter[2];
+        colors[1][1] = primaryOuter[1];
+        colors[1][0] = primaryOuter[0];
+        System.out.println("Orange Counter Clock Wise ");
+        return colors;
+
+    }
+    public static int[][] redClockWise(int[][] colors) {
+        int[] primaryFace = new int[62];
+        primaryFace[0] = colors[5][0];
+        primaryFace[1] = colors[5][1];
+        primaryFace[2] = colors[5][2];
+        primaryFace[3] = colors[5][3];
+        primaryFace[4] = colors[5][4];
+        primaryFace[5] = colors[5][5];
+        primaryFace[6] = colors[5][6];
+        primaryFace[7] = colors[5][7];
+        primaryFace[8] = colors[5][8];
+
+        colors[5][2] = primaryFace[0];
+        colors[5][5] = primaryFace[1];
+        colors[5][8] = primaryFace[2];
+        colors[5][1] = primaryFace[3];
+        colors[5][4] = primaryFace[4];
+        colors[5][7] = primaryFace[5];
+        colors[5][0] = primaryFace[6];
+        colors[5][3] = primaryFace[7];
+        colors[5][6] = primaryFace[8];
+
+
+        int[] primaryOuter = new int[62];
+        primaryOuter[38] = colors[3][8];
+        primaryOuter[37] = colors[3][7];
+        primaryOuter[36] = colors[3][6];
+        primaryOuter[28] = colors[2][8];
+        primaryOuter[27] = colors[2][7];
+        primaryOuter[26] = colors[2][6];
+        primaryOuter[18] = colors[1][8];
+        primaryOuter[17] = colors[1][7];
+        primaryOuter[16] = colors[1][6];
+        primaryOuter[8] = colors[0][8];
+        primaryOuter[7] = colors[0][7];
+        primaryOuter[6] = colors[0][6];
+
+        colors[2][6] = primaryOuter[16];
+        colors[2][7] = primaryOuter[17];
+        colors[2][8] = primaryOuter[18];
+        colors[3][6] = primaryOuter[26];
+        colors[3][7] = primaryOuter[27];
+        colors[3][8] = primaryOuter[28];
+        colors[0][6] = primaryOuter[36];
+        colors[0][7] = primaryOuter[37];
+        colors[0][8] = primaryOuter[38];
+        colors[1][6] = primaryOuter[6];
+        colors[1][7] = primaryOuter[7];
+        colors[1][8] = primaryOuter[8];
+        System.out.println("RedClockWise");
+        return colors;
+    }
+
+    public static int[][] redCounterClockWise(int[][] colors) {
+        int[] primaryFace = new int[62];
+        primaryFace[0] = colors[5][0];
+        primaryFace[1] = colors[5][1];
+        primaryFace[2] = colors[5][2];
+        primaryFace[3] = colors[5][3];
+        primaryFace[4] = colors[5][4];
+        primaryFace[5] = colors[5][5];
+        primaryFace[6] = colors[5][6];
+        primaryFace[7] = colors[5][7];
+        primaryFace[8] = colors[5][8];
+
+        colors[5][6] = primaryFace[0];
+        colors[5][3] = primaryFace[1];
+        colors[5][0] = primaryFace[2];
+        colors[5][7] = primaryFace[3];
+        colors[5][4] = primaryFace[4];
+        colors[5][1] = primaryFace[5];
+        colors[5][8] = primaryFace[6];
+        colors[5][5] = primaryFace[7];
+        colors[5][2] = primaryFace[8];
+
+        int[] primaryOuter = new int[62];
+
+        primaryOuter[16] = colors[1][6];
+        primaryOuter[17] = colors[1][7];
+        primaryOuter[18] = colors[1][8];
+        primaryOuter[26] = colors[2][6];
+        primaryOuter[27] = colors[2][7];
+        primaryOuter[28] = colors[2][8];
+        primaryOuter[36] = colors[3][6];
+        primaryOuter[37] = colors[3][7];
+        primaryOuter[38] = colors[3][8];
+        primaryOuter[6] = colors[0][6];
+        primaryOuter[7] = colors[0][7];
+        primaryOuter[8] = colors[0][8];
+
+
+        colors[0][6] = primaryOuter[16];
+        colors[0][7] = primaryOuter[17];
+        colors[0][8] = primaryOuter[18];
+        colors[1][6] = primaryOuter[26];
+        colors[1][7] = primaryOuter[27];
+        colors[1][8] = primaryOuter[28];
+        colors[2][6] = primaryOuter[36];
+        colors[2][7] = primaryOuter[37];
+        colors[2][8] = primaryOuter[38];
+        colors[3][6] = primaryOuter[6];
+        colors[3][7] = primaryOuter[7];
+        colors[3][8] = primaryOuter[8];
+        System.out.println("redCounterClockWise");
+        return colors;
+
+    }
 }
 
