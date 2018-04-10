@@ -1,9 +1,10 @@
 package CubicSolver;
-
-
 import java.util.Scanner;
 
+
 public class CubicRubic {
+
+    // Original numbers for colors of cube rubrix.
 
     private static final int COLOR_GREEN = 1;
     private static final int COLOR_WHITE = 2;
@@ -78,16 +79,16 @@ public class CubicRubic {
             inputData[3][zeroCounter] = Integer.parseInt(in.nextLine());
         }
 
-        // Enter colors for the Orange side.
-        System.out.println("please turn the Cubic forward");
-        for (zeroCounter = 0; zeroCounter <= 8; ++zeroCounter) {
+        // Enter colors for the Orange side.1
+        System.out.println("please turn the Cubic forward for the orange side");
+        for (zeroCounter = 0; zeroCounter <= 8; zeroCounter++) {
             inputData[4][zeroCounter] = Integer.parseInt(in.nextLine());
 
         }
 
         // Enter colors for the Red side.
-        System.out.println("See the opposite side of Cubic");
-        for (zeroCounter = 0; zeroCounter <= 8; ++zeroCounter) {
+        System.out.println("See the opposite side of Cubic for the red side");
+        for (zeroCounter = 0; zeroCounter <= 8; zeroCounter++) {
             inputData[5][zeroCounter] = Integer.parseInt(in.nextLine());
         }
 
@@ -97,7 +98,7 @@ public class CubicRubic {
 
     //Moving Faces
     //GreenClockWise
-    public static int[][] greenClockWise(int[][] colors) {
+    public static int[][] greenClockWise(int[][] colors) { // clockWise ->
         int[] primaryFace = new int[62];
 
         primaryFace[0] = colors[0][0];
@@ -737,6 +738,14 @@ public class CubicRubic {
         System.out.println("redCounterClockWise");
         return colors;
 
+    }
+
+    public static int[][] whiteSide(int[][] cube_Colors) {
+        if (cube_Colors[0][2] == COLOR_WHITE && cube_Colors[4][3] == COLOR_GREEN) {
+            cube_Colors = orangeClockWise(cube_Colors);
+            cube_Colors = whiteClockWise(cube_Colors);
+        }
+        return cube_Colors;
     }
 }
 
