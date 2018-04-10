@@ -1,9 +1,12 @@
 package CubicSolver;
+
 import java.util.Scanner;
 
 
 public class CubicRubic {
-
+// test have to learn
+// constructor done
+// benafj done
     // Original numbers for colors of cube rubrix.
 
     private static final int COLOR_GREEN = 1;
@@ -13,6 +16,17 @@ public class CubicRubic {
     private static final int COLOR_ORANGE = 5;
     private static final int COLOR_RED = 6;
 
+    int[][] colors;
+
+    public CubicRubic(int[][] inputData) {
+        colors = new int[6][9];
+        colors[0][0] = inputData[0][0];
+        for (int firstNumberOfArray  = 0; firstNumberOfArray  < 6 ; firstNumberOfArray ++) {
+            for (int secondNumberOfArray = 0; secondNumberOfArray < 9; secondNumberOfArray++) {
+                System.out.println(colors[firstNumberOfArray ][secondNumberOfArray]);
+            }
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -24,6 +38,8 @@ public class CubicRubic {
 
     public static int[][] getColors() {
         int inputData[][] = new int[6][9];  // 6 sides and 9 pieces  each side.
+
+        CubicRubic cube = new CubicRubic(inputData);
 
         int zeroCounter = 0;   // initializing the counters for loops
 
@@ -98,7 +114,7 @@ public class CubicRubic {
 
     //Moving Faces
     //GreenClockWise
-    public static int[][] greenClockWise(int[][] colors) { // clockWise ->
+    public int[][] greenClockWise() { // clockWise ->
         int[] primaryFace = new int[62];
 
         primaryFace[0] = colors[0][0];
@@ -150,11 +166,10 @@ public class CubicRubic {
         colors[4][6] = primaryOuter[32];
 
         // now we have to update values after turning the Green side ClockWise.
-        System.out.println("GreenClockWise");
         return colors;
     }
 
-    public static int[][] greenCounterClockWise(int[][] colors) { // greenCounterClockWise <-
+    public int[][] greenCounterClockWise() { // greenCounterClockWise <-
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[0][0];
         primaryFace[1] = colors[0][1];
@@ -211,7 +226,7 @@ public class CubicRubic {
     }
 
 
-    public static int[][] whiteClockWise(int[][] colors) {     // Turning white side clockWise
+    public int[][] whiteClockWise() {     // Turning white side clockWise
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[1][0];
         primaryFace[1] = colors[1][1];
@@ -263,7 +278,8 @@ public class CubicRubic {
         return colors;
     }
 
-    public static int[][] whiteCounterClockWise(int[][] colors) {
+    public int[][] whiteCounterClockWise() {
+
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[1][0];
         primaryFace[1] = colors[1][1];
@@ -316,7 +332,8 @@ public class CubicRubic {
         return colors;
     }
 
-    public static int[][] BlueClockWise(int[][] colors) {
+    public int[][] blueClockWise() {
+
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[2][0];
         primaryFace[1] = colors[2][1];
@@ -364,11 +381,11 @@ public class CubicRubic {
         colors[4][2] = primaryOuter[12];
         colors[4][5] = primaryOuter[15];
         colors[4][8] = primaryOuter[18];
-        System.out.println("BlueClockWise");
         return colors;
     }
 
-    public static int[][] BlueCounterClockWise(int[][] colors) {
+    public int[][] BlueCounterClockWise() {
+
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[2][0];
         primaryFace[1] = colors[2][1];
@@ -420,7 +437,7 @@ public class CubicRubic {
         return colors;
     }
 
-    public static int[][] yellowClockWise(int[][] colors) {
+    public int[][] yellowClockWise() {
 
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[3][0];
@@ -474,7 +491,7 @@ public class CubicRubic {
         return colors;
     }
 
-    public static int[][] yellowCounterClockWise(int[][] colors) {
+    public int[][] yellowCounterClockWise() {
 
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[3][0];
@@ -527,7 +544,7 @@ public class CubicRubic {
         return colors;
     }
 
-    public static int[][] orangeClockWise(int[][] colors) {
+    public int[][] orangeClockWise() {
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[4][0];
         primaryFace[1] = colors[4][1];
@@ -580,7 +597,7 @@ public class CubicRubic {
 
     }
 
-    public static int[][] orangeCounterClockWise(int[][] colors) {
+    public int[][] orangeCounterClockWise() {
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[4][0];
         primaryFace[1] = colors[4][1];
@@ -632,7 +649,8 @@ public class CubicRubic {
         return colors;
 
     }
-    public static int[][] redClockWise(int[][] colors) {
+
+    public int[][] redClockWise() {
         int[] primaryFace = new int[62];
         primaryFace[0] = colors[5][0];
         primaryFace[1] = colors[5][1];
@@ -681,12 +699,12 @@ public class CubicRubic {
         colors[1][6] = primaryOuter[6];
         colors[1][7] = primaryOuter[7];
         colors[1][8] = primaryOuter[8];
-        System.out.println("RedClockWise");
         return colors;
     }
 
-    public static int[][] redCounterClockWise(int[][] colors) {
+    public int[][] redCounterClockWise() {
         int[] primaryFace = new int[62];
+
         primaryFace[0] = colors[5][0];
         primaryFace[1] = colors[5][1];
         primaryFace[2] = colors[5][2];
@@ -740,12 +758,5 @@ public class CubicRubic {
 
     }
 
-    public static int[][] whiteSide(int[][] cube_Colors) {
-        if (cube_Colors[0][2] == COLOR_WHITE && cube_Colors[4][3] == COLOR_GREEN) {
-            cube_Colors = orangeClockWise(cube_Colors);
-            cube_Colors = whiteClockWise(cube_Colors);
-        }
-        return cube_Colors;
-    }
 }
 
